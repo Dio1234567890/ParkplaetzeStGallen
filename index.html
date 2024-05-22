@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkplätze in Stadt St. Gallen</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js-Bibliothek einbinden -->
+</head>
+<body>
+    <header>
+        Parkplätze in Stadt St. Gallen
+    </header>
+    <div class="container">
+        <p>In St. Gallen sind viele Parkhäuser oft voll belegt. Unsere Webseite hilft Ihnen, schnell zu erkennen, welche Parkhäuser noch freie Kapazitäten haben. So können Sie Ihren Einkauf oder Stadtbesuch besser planen und die Stosszeiten vermeiden. Mit unseren präzisen Analysen zur Parkplatzverfügbarkeit profitieren Sie von weniger Verkehr und einem reibungsloseren Ablauf.</p>
+        <div class="block">
+            <h2>Wann musst du in der Stadt sein?</h2>
+            <p>Wählen Sie die Uhrzeit um zusehen, welches Parkhaus um diese Zeit am meisten Kapazität hat.</p>
+            <div class="input-block">
+                <input type="time" id="timeInput" required>
+            </div>
+            <button id="getAvailabilityButton">Verfügbarkeit prüfen</button>
+            <div id="availabilityResult">
+                <p>Ergebnisse werden hier angezeigt.</p>
+            </div>
+        </div>
+        <div class="block no-padding">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1cKfX-vVZQ2mDZhNiZPYS9YlvT8C2yNM&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        </div>
+        <div class="block">
+            <h2>Auslastung von ...</h2>
+            <!-- Dropdown-Menü für die Auswahl des Parkhauses -->
+            <div class="dropdown-block">
+                <label for="parkingDropdown">Wählen Sie ein Parkhaus:</label>
+                <select id="parkingDropdown">
+                    <option value="">Wähle ein Parkhaus</option>
+                </select>
+            </div>
+            <div id="barChartContainer">
+                <canvas id="barChart"></canvas> <!-- Hier wird das Balkendiagramm gezeichnet -->
+            </div>
+        </div>
+    </div>
+    <footer>
+        Ein Projekt von Dionys, Emanuel und Jonas
+    </footer>
+
+    <!-- Hinzufügen des JavaScript-Codes für die Verfügbarkeitsprüfung -->
+    <script src="dropdown.js"></script>
+    <script src="getLeastBusyParking.js"></script>
+    <script src="barChart.js"></script>
+</body>
+</html>
